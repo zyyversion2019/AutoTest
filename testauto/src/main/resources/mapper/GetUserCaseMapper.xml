@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="getUserCase">
+  <!--获取登陆接口case-->
+  <select id="selectGetUserCaseByCaseName" parameterType="String" resultType="com.zyy.testauto.model.GetUserCase">
+        select * from get_user_case
+        where casename=#{casename};
+    </select>
+
+    <select id="getUserById" parameterType="String" resultType="com.zyy.testauto.model.User">
+        select
+        id as id,
+        user_name as userName,
+        sex as sex,
+        is_del as isDel,
+        password as password
+        from user
+        where id=#{id};
+    </select>
+
+
+</mapper>
